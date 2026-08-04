@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Mystery's Funhouse: Phone Edition 0.1.1 Beta</title>
+    <title>Mystery's Funhouse: Phone Edition Alpha 0.2</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -109,6 +109,11 @@
                 <span id="hud-hearts" class="text-sm tracking-widest text-rose-500">❤️❤️❤️</span>
             </div>
 
+            <!-- Room Badge -->
+            <div class="flex items-center gap-1 bg-slate-900/90 border border-cyan-500/80 px-3 py-1.5 rounded-full backdrop-blur-md pointer-events-auto">
+                <span id="hud-room" class="text-[10px] font-pixel text-cyan-400">FUNHOUSE</span>
+            </div>
+
             <!-- Key Counter Badge -->
             <div class="flex items-center gap-2 bg-slate-900/90 border border-pink-500/80 px-3 py-1.5 rounded-full backdrop-blur-md neon-box-pink pointer-events-auto">
                 <span class="text-lg key-glow">🗝️</span>
@@ -142,17 +147,17 @@
                     MYSTERY'S FUNHOUSE
                 </h1>
                 <div class="font-pixel text-[10px] sm:text-xs text-pink-400 neon-text-pink mb-4 tracking-widest bg-pink-950/50 px-3 py-1 rounded-full border border-pink-500/40">
-                    PHONE EDITION 0.1.1 BETA
+                    PHONE EDITION ALPHA 0.2
                 </div>
 
                 <p class="text-slate-300 text-xs mb-4 max-w-xs leading-relaxed">
-                    Survive monsters with <span class="text-rose-400 font-bold">3 Hearts</span>! Customize block colors & upload your own skin sprite!
+                    Survive 3 rooms: Funhouse, Hell, and the Backrooms! Escape to victory!
                 </p>
 
                 <!-- Main Menu Action Buttons -->
                 <div class="w-full space-y-2.5 mb-4">
                     <button id="btn-generate-world" class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-pixel text-xs py-3.5 px-4 rounded-2xl border-2 border-emerald-200 font-black shadow-lg active:scale-95 transition-all flex items-center justify-center gap-2">
-                        <span>✨</span> NEW FUNHOUSE WORLD
+                        <span>✨</span> NEW GAME
                     </button>
 
                     <button id="btn-open-saved-worlds" class="w-full bg-cyan-600 hover:bg-cyan-500 text-slate-950 font-pixel text-xs py-3 px-4 rounded-2xl border-2 border-cyan-200 font-bold shadow-md active:scale-95 transition-all flex items-center justify-center gap-2">
@@ -169,11 +174,11 @@
                 </div>
 
                 <div class="w-full bg-slate-950/80 border border-slate-800 rounded-2xl p-3 text-[11px] text-left text-slate-400 space-y-1">
-                    <div class="text-emerald-400 font-pixel text-[10px] mb-1">🎮 NEW FEATURES:</div>
-                    <div>• 3 Hearts ❤️ system (No wall push bug)</div>
-                    <div>• Respawn retains all collected keys</div>
-                    <div>• Upload image skins with auto-bg removal</div>
-                    <div>• Persistent IndexedDB World Saves</div>
+                    <div class="text-emerald-400 font-pixel text-[10px] mb-1">🎮 ALPHA 0.2 FEATURES:</div>
+                    <div>• Room 1: Funhouse (5 Keys)</div>
+                    <div>• Room 2: Hell Room (8 Keys + Red Monsters)</div>
+                    <div>• Room 3: Backrooms (10 Keys + Shadow Realm Monsters)</div>
+                    <div>• Upload custom player skin PNGs</div>
                 </div>
             </div>
         </div>
@@ -234,7 +239,7 @@
                 <!-- Block & Floor Color Customizer -->
                 <div class="bg-slate-950 border border-slate-800 rounded-xl p-3 mb-4 space-y-3">
                     <div class="text-xs font-pixel text-emerald-400">
-                        🧱 MAZE BLOCK COLORS
+                        🧱 ROOM 1 BLOCK COLORS
                     </div>
 
                     <!-- Color Pickers -->
@@ -283,7 +288,7 @@
                     <button id="btn-close-enter-json" class="text-slate-400 hover:text-white text-lg font-bold px-2">✕</button>
                 </div>
 
-                <textarea id="json-input" rows="6" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-[10px] font-mono text-emerald-300 focus:border-emerald-500 focus:outline-none resize-none mb-3" placeholder='{"gridWidth":23,"gridHeight":23,...}'></textarea>
+                <textarea id="json-input" rows="6" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-[10px] font-mono text-emerald-300 focus:border-emerald-500 focus:outline-none resize-none mb-3" placeholder='{"gridWidth":21,"gridHeight":21,...}'></textarea>
 
                 <div class="flex gap-2">
                     <button id="btn-load-json" class="flex-1 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-pixel text-[11px] py-3 rounded-xl font-bold active:scale-95 transition-all">
@@ -300,7 +305,7 @@
             <div class="max-w-xs w-full bg-slate-900 border-2 border-purple-500 rounded-3xl p-5 neon-box-pink flex flex-col items-center text-center">
                 <div class="text-3xl mb-1">⏸️</div>
                 <h2 class="font-pixel text-lg text-purple-400 neon-text-pink mb-1">PAUSED</h2>
-                <p class="text-[10px] text-slate-400 mb-4 font-pixel">PHONE EDITION 0.1.1 BETA</p>
+                <p class="text-[10px] text-slate-400 mb-4 font-pixel">ALPHA 0.2</p>
 
                 <div class="w-full space-y-2.5 mb-3">
                     <button id="btn-resume" class="w-full bg-purple-600 hover:bg-purple-500 text-white font-pixel text-xs py-3 px-4 rounded-xl border border-purple-300 shadow-md active:scale-95 transition-all">
@@ -350,12 +355,12 @@
             <div class="max-w-xs w-full bg-slate-900 border-2 border-emerald-500 rounded-3xl p-6 neon-box-green flex flex-col items-center text-center">
                 <div class="text-4xl mb-2 animate-bounce">🏆</div>
                 <h2 class="font-pixel text-lg text-emerald-400 neon-text-green mb-1">YOU ESCAPED!</h2>
-                <p class="text-slate-300 text-xs mb-4">Funhouse cleared on Mobile!</p>
+                <p class="text-slate-300 text-xs mb-4">Cleared all 3 rooms & escaped Mystery's Funhouse!</p>
 
                 <div class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 mb-5 space-y-2 text-[10px] font-pixel">
                     <div class="flex justify-between text-slate-400">
                         <span>KEYS:</span>
-                        <span id="end-stat-keys" class="text-amber-300">5 / 5</span>
+                        <span id="end-stat-keys" class="text-amber-300">10 / 10</span>
                     </div>
                     <div class="flex justify-between text-slate-400">
                         <span>TIME:</span>
@@ -383,7 +388,7 @@
     <script>
         class FunhouseDB {
             constructor() {
-                this.dbName = 'FunhouseDB_v1';
+                this.dbName = 'FunhouseDB_v2';
                 this.storeName = 'worlds';
                 this.db = null;
             }
@@ -457,25 +462,23 @@
                 const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
                 const data = imgData.data;
 
-                // Sample corner pixel color (top-left) to establish background reference
                 const bgR = data[0];
                 const bgG = data[1];
                 const bgB = data[2];
 
-                const threshold = 45; // Color distance threshold
+                const threshold = 45;
 
                 for (let i = 0; i < data.length; i += 4) {
                     const r = data[i];
                     const g = data[i + 1];
                     const b = data[i + 2];
 
-                    // Calculate Euclidean distance from corner background color or white/black extremes
                     const dist = Math.sqrt((r - bgR) ** 2 + (g - bgG) ** 2 + (b - bgB) ** 2);
                     const isNearWhite = (r > 240 && g > 240 && b > 240);
                     const isNearBlack = (r < 15 && g < 15 && b < 15 && (bgR < 15 && bgG < 15 && bgB < 15));
 
                     if (dist < threshold || isNearWhite || isNearBlack) {
-                        data[i + 3] = 0; // Set Alpha to 0 (Transparent)
+                        data[i + 3] = 0;
                     }
                 }
 
@@ -533,6 +536,13 @@
                 setTimeout(() => this.playTone(1046.50, 'triangle', 0.2, 0.25), 210);
             }
 
+            playPortalSound() {
+                this.init();
+                this.vibrate([100, 100]);
+                this.playTone(300, 'sine', 0.15, 0.2);
+                setTimeout(() => this.playTone(600, 'sine', 0.25, 0.2), 120);
+            }
+
             playMonsterAttack() {
                 this.init();
                 this.vibrate([80, 40, 80]);
@@ -578,11 +588,10 @@
 
         const audio = new MobileAudioEngine();
 
-        class FunhouseGenerator {
-            static generate(cols = 21, rows = 21, seed = null) {
+        class RoomGenerator {
+            static generateRoom(cols, rows, keyCount, monsterCount, type, seed) {
                 const width = cols % 2 === 0 ? cols + 1 : cols;
                 const height = rows % 2 === 0 ? rows + 1 : rows;
-
                 const grid = Array.from({ length: height }, () => Array(width).fill(1));
 
                 let currentSeed = seed || Math.floor(Math.random() * 10000000);
@@ -652,7 +661,7 @@
 
                 const keys = [];
                 let floorIndex = 0;
-                while (keys.length < 5 && floorIndex < walkableFloors.length) {
+                while (keys.length < keyCount && floorIndex < walkableFloors.length) {
                     const pos = walkableFloors[floorIndex++];
                     if (pos.x !== playerStart.x || pos.y !== playerStart.y) {
                         keys.push({ id: keys.length + 1, x: pos.x, y: pos.y, collected: false });
@@ -663,7 +672,6 @@
                 if (grid[exitPos.y][exitPos.x] === 1) grid[exitPos.y][exitPos.x] = 0;
 
                 const monsters = [];
-                const monsterCount = 4;
                 for (let i = 0; i < monsterCount && floorIndex < walkableFloors.length; i++) {
                     const pos = walkableFloors[floorIndex++];
                     if (Math.hypot(pos.x - playerStart.x, pos.y - playerStart.y) > 4) {
@@ -680,6 +688,7 @@
 
                 return {
                     seed: currentSeed,
+                    type: type,
                     gridWidth: width,
                     gridHeight: height,
                     grid: grid,
@@ -687,6 +696,18 @@
                     exit: exitPos,
                     keys: keys,
                     monsters: monsters
+                };
+            }
+
+            static generateFullGame(seed = null) {
+                const baseSeed = seed || Math.floor(Math.random() * 10000000);
+                return {
+                    currentRoomIndex: 0,
+                    rooms: [
+                        this.generateRoom(21, 21, 5, 4, 'funhouse', baseSeed),
+                        this.generateRoom(25, 25, 8, 6, 'hell', baseSeed + 101),
+                        this.generateRoom(29, 29, 10, 8, 'backrooms', baseSeed + 202)
+                    ]
                 };
             }
         }
@@ -801,7 +822,8 @@
                 this.ctx = this.canvas.getContext('2d');
 
                 this.tileSize = 48;
-                this.world = null;
+                this.gameState = null; // Full Game object containing room sequence
+                this.world = null;     // Pointer to current room
 
                 this.player = {
                     x: 1.5,
@@ -812,7 +834,7 @@
                     invincibleFrames: 0
                 };
 
-                // Maze Block Colors
+                // Room 1 Custom Theme
                 this.theme = {
                     wall: '#171527',
                     border: '#ec4899',
@@ -890,27 +912,24 @@
             }
 
             loadWorld(worldData) {
-                this.world = JSON.parse(JSON.stringify(worldData));
-                
-                // Set or restore player start position
-                if (this.world.playerCurrent) {
-                    this.player.x = this.world.playerCurrent.x;
-                    this.player.y = this.world.playerCurrent.y;
+                // If standard 0.1 legacy JSON world is passed
+                if (worldData.grid && !worldData.rooms) {
+                    this.gameState = {
+                        currentRoomIndex: 0,
+                        rooms: [worldData]
+                    };
                 } else {
-                    this.player.x = this.world.playerStart.x + 0.5;
-                    this.player.y = this.world.playerStart.y + 0.5;
+                    this.gameState = JSON.parse(JSON.stringify(worldData));
                 }
+
+                this.setRoom(this.gameState.currentRoomIndex || 0);
 
                 this.player.hearts = 3;
                 this.player.invincibleFrames = 0;
 
-                this.keysCollected = this.world.keys.filter(k => k.collected).length;
-                this.updateHudKeyCount();
-                this.updateHudHearts();
-
                 this.isPaused = false;
                 this.isGameOver = false;
-                this.gameTimeSeconds = this.world.timeElapsed || 0;
+                this.gameTimeSeconds = this.gameState.timeElapsed || 0;
 
                 if (this.timerInterval) clearInterval(this.timerInterval);
                 this.timerInterval = setInterval(() => {
@@ -923,6 +942,24 @@
                 this.showHud(true);
             }
 
+            setRoom(index) {
+                this.gameState.currentRoomIndex = index;
+                this.world = this.gameState.rooms[index];
+
+                if (this.world.playerCurrent) {
+                    this.player.x = this.world.playerCurrent.x;
+                    this.player.y = this.world.playerCurrent.y;
+                } else {
+                    this.player.x = this.world.playerStart.x + 0.5;
+                    this.player.y = this.world.playerStart.y + 0.5;
+                }
+
+                this.keysCollected = this.world.keys.filter(k => k.collected).length;
+                this.updateHudRoom();
+                this.updateHudKeyCount();
+                this.updateHudHearts();
+            }
+
             updateHudHearts() {
                 const el = document.getElementById('hud-hearts');
                 if (!el) return;
@@ -933,9 +970,24 @@
                 el.innerText = heartsStr;
             }
 
+            updateHudRoom() {
+                const el = document.getElementById('hud-room');
+                if (!el) return;
+                if (this.world.type === 'hell') {
+                    el.innerText = "HELL ROOM";
+                    el.className = "text-[10px] font-pixel text-rose-500";
+                } else if (this.world.type === 'backrooms') {
+                    el.innerText = "BACKROOMS";
+                    el.className = "text-[10px] font-pixel text-amber-400";
+                } else {
+                    el.innerText = "FUNHOUSE";
+                    el.className = "text-[10px] font-pixel text-cyan-400";
+                }
+            }
+
             updateHudKeyCount() {
                 const el = document.getElementById('key-count');
-                if (el) el.innerText = `${this.keysCollected}/5`;
+                if (el) el.innerText = `${this.keysCollected}/${this.world.keys.length}`;
             }
 
             updateHudTimer() {
@@ -974,7 +1026,7 @@
                 this.player.x = this.world.playerStart.x + 0.5;
                 this.player.y = this.world.playerStart.y + 0.5;
                 this.player.hearts = 3;
-                this.player.invincibleFrames = 90; // Invincible brief period after respawning
+                this.player.invincibleFrames = 90;
                 this.updateHudHearts();
                 this.isGameOver = false;
                 audio.playRespawnSound();
@@ -982,12 +1034,12 @@
             }
 
             exportJSON() {
-                if (!this.world) return "";
+                if (!this.gameState) return "";
                 const copyState = {
-                    ...this.world,
-                    playerCurrent: { x: this.player.x, y: this.player.y },
+                    ...this.gameState,
                     timeElapsed: this.gameTimeSeconds
                 };
+                copyState.rooms[this.gameState.currentRoomIndex].playerCurrent = { x: this.player.x, y: this.player.y };
                 return JSON.stringify(copyState, null, 2);
             }
 
@@ -998,14 +1050,14 @@
                     this.player.invincibleFrames--;
                 }
 
-                // Player movement with solid wall collision
+                // Player movement
                 const nextX = this.player.x + this.inputDir.x * this.player.speed;
                 const nextY = this.player.y + this.inputDir.y * this.player.speed;
 
                 if (!this.isWall(nextX, this.player.y)) this.player.x = nextX;
                 if (!this.isWall(this.player.x, nextY)) this.player.y = nextY;
 
-                // Key Pickup Check (Keys collected stay collected)
+                // Key Pickup Check
                 this.world.keys.forEach(key => {
                     if (!key.collected) {
                         const dist = Math.hypot(this.player.x - (key.x + 0.5), this.player.y - (key.y + 0.5));
@@ -1015,18 +1067,24 @@
                             this.updateHudKeyCount();
                             audio.playKeySound();
                             this.spawnParticles(key.x + 0.5, key.y + 0.5, '#facc15', 20);
-                            showToast(`Key ${this.keysCollected}/5 collected!`);
+                            showToast(`Key ${this.keysCollected}/${this.world.keys.length} collected!`);
                         }
                     }
                 });
 
-                // Exit portal check
+                // Exit portal check / Progression
                 const exitDist = Math.hypot(this.player.x - (this.world.exit.x + 0.5), this.player.y - (this.world.exit.y + 0.5));
-                if (exitDist < 0.65 && this.keysCollected >= 5) {
-                    this.triggerVictory();
+                if (exitDist < 0.65 && this.keysCollected >= this.world.keys.length) {
+                    if (this.gameState.currentRoomIndex < this.gameState.rooms.length - 1) {
+                        audio.playPortalSound();
+                        showToast(`Portal Entered! Proceeding to Room ${this.gameState.currentRoomIndex + 2}!`);
+                        this.setRoom(this.gameState.currentRoomIndex + 1);
+                    } else {
+                        this.triggerVictory();
+                    }
                 }
 
-                // Monster AI & Non-clipping Attack logic
+                // Monster AI
                 this.world.monsters.forEach(m => {
                     const distToPlayer = Math.hypot(this.player.x - m.x, this.player.y - m.y);
 
@@ -1056,17 +1114,16 @@
                         else m.patrolTarget = null;
                     }
 
-                    // Monster Attacks Player (Deals 1 Heart Damage without pushing through walls)
+                    // Damage player
                     if (distToPlayer < 0.6) {
                         if (this.player.invincibleFrames <= 0) {
                             this.player.hearts -= 1;
-                            this.player.invincibleFrames = 75; // 1.25 seconds invincibility frame
+                            this.player.invincibleFrames = 75;
                             this.updateHudHearts();
                             audio.playMonsterAttack();
                             this.screenShake = 14;
                             this.spawnParticles(this.player.x, this.player.y, '#f43f5e', 18);
 
-                            // Safe knockback that ALWAYS validates wall collisions so monsters never push into walls
                             const pushAngle = Math.atan2(this.player.y - m.y, this.player.x - m.x);
                             const safeNudgeX = this.player.x + Math.cos(pushAngle) * 0.35;
                             const safeNudgeY = this.player.y + Math.sin(pushAngle) * 0.35;
@@ -1131,9 +1188,28 @@
                 const m = Math.floor(this.gameTimeSeconds / 60).toString().padStart(2, '0');
                 const s = (this.gameTimeSeconds % 60).toString().padStart(2, '0');
 
-                document.getElementById('end-stat-keys').innerText = `${this.keysCollected} / 5`;
+                document.getElementById('end-stat-keys').innerText = `10 / 10`;
                 document.getElementById('end-stat-time').innerText = `${m}:${s}`;
                 document.getElementById('end-modal').classList.remove('hidden');
+            }
+
+            getRoomTheme() {
+                if (this.world.type === 'hell') {
+                    return {
+                        wall: '#3a0202',
+                        border: '#ef4444',
+                        floor1: '#180303',
+                        floor2: '#2b0707'
+                    };
+                } else if (this.world.type === 'backrooms') {
+                    return {
+                        wall: '#857530',
+                        border: '#eab308',
+                        floor1: '#423a1c',
+                        floor2: '#524822'
+                    };
+                }
+                return this.theme; // Default custom user theme for Room 1
             }
 
             render() {
@@ -1160,6 +1236,8 @@
                 const startRow = Math.max(0, Math.floor(cameraY / this.tileSize) - 1);
                 const endRow = Math.min(this.world.gridHeight, Math.ceil((cameraY + height) / this.tileSize) + 1);
 
+                const currentTheme = this.getRoomTheme();
+
                 // Render Customized Wall Blocks & Floor Tiles
                 for (let r = startRow; r < endRow; r++) {
                     for (let c = startCol; c < endCol; c++) {
@@ -1168,15 +1246,15 @@
                         const y = r * this.tileSize;
 
                         if (cell === 1) {
-                            ctx.fillStyle = this.theme.wall;
+                            ctx.fillStyle = currentTheme.wall;
                             ctx.fillRect(x, y, this.tileSize, this.tileSize);
 
-                            ctx.strokeStyle = this.theme.border;
+                            ctx.strokeStyle = currentTheme.border;
                             ctx.lineWidth = 1.5;
                             ctx.strokeRect(x + 1, y + 1, this.tileSize - 2, this.tileSize - 2);
                         } else {
                             const isEven = (r + c) % 2 === 0;
-                            ctx.fillStyle = isEven ? this.theme.floor1 : this.theme.floor2;
+                            ctx.fillStyle = isEven ? currentTheme.floor1 : currentTheme.floor2;
                             ctx.fillRect(x, y, this.tileSize, this.tileSize);
                         }
                     }
@@ -1185,7 +1263,7 @@
                 // Render Exit Portal
                 const exitX = (this.world.exit.x + 0.5) * this.tileSize;
                 const exitY = (this.world.exit.y + 0.5) * this.tileSize;
-                const unlocked = this.keysCollected >= 5;
+                const unlocked = this.keysCollected >= this.world.keys.length;
 
                 ctx.save();
                 ctx.translate(exitX, exitY);
@@ -1197,10 +1275,10 @@
                 ctx.font = '18px sans-serif';
                 ctx.textAlign = 'center';
                 ctx.textBaseline = 'middle';
-                ctx.fillText(unlocked ? '🚪' : '🔒', 0, 0);
+                ctx.fillText(unlocked ? '🌀' : '🔒', 0, 0);
                 ctx.restore();
 
-                // Render Keys (Retained on death/respawn)
+                // Render Keys
                 const hoverOffset = Math.sin(Date.now() * 0.005) * 3;
                 this.world.keys.forEach(key => {
                     if (!key.collected) {
@@ -1217,7 +1295,7 @@
                     }
                 });
 
-                // Render Green Monsters
+                // Render Room-Specific Monsters
                 this.world.monsters.forEach(m => {
                     const mx = m.x * this.tileSize;
                     const my = m.y * this.tileSize;
@@ -1225,29 +1303,59 @@
                     ctx.save();
                     ctx.translate(mx, my);
 
-                    ctx.fillStyle = m.state === 'chase' ? '#16a34a' : '#22c55e';
-                    ctx.beginPath();
-                    ctx.arc(0, 0, this.tileSize * 0.36, 0, Math.PI * 2);
-                    ctx.fill();
+                    if (this.world.type === 'hell') {
+                        // Red Hell Monsters
+                        ctx.fillStyle = m.state === 'chase' ? '#dc2626' : '#ef4444';
+                        ctx.beginPath();
+                        ctx.arc(0, 0, this.tileSize * 0.36, 0, Math.PI * 2);
+                        ctx.fill();
 
-                    // Eyes
-                    ctx.fillStyle = m.state === 'chase' ? '#ef4444' : '#facc15';
-                    ctx.beginPath();
-                    ctx.arc(-6, -4, 4, 0, Math.PI * 2);
-                    ctx.arc(6, -4, 4, 0, Math.PI * 2);
-                    ctx.fill();
+                        // Glowing yellow/orange eyes
+                        ctx.fillStyle = '#facc15';
+                        ctx.beginPath();
+                        ctx.arc(-6, -4, 4, 0, Math.PI * 2);
+                        ctx.arc(6, -4, 4, 0, Math.PI * 2);
+                        ctx.fill();
+                    } else if (this.world.type === 'backrooms') {
+                        // Shadow Realm (Black) Monsters
+                        ctx.fillStyle = '#020617';
+                        ctx.beginPath();
+                        ctx.arc(0, 0, this.tileSize * 0.38, 0, Math.PI * 2);
+                        ctx.fill();
+                        ctx.strokeStyle = '#334155';
+                        ctx.lineWidth = 1.5;
+                        ctx.stroke();
+
+                        // Glowing white eyes
+                        ctx.fillStyle = '#ffffff';
+                        ctx.beginPath();
+                        ctx.arc(-6, -4, 3, 0, Math.PI * 2);
+                        ctx.arc(6, -4, 3, 0, Math.PI * 2);
+                        ctx.fill();
+                    } else {
+                        // Default Funhouse Green Monsters
+                        ctx.fillStyle = m.state === 'chase' ? '#16a34a' : '#22c55e';
+                        ctx.beginPath();
+                        ctx.arc(0, 0, this.tileSize * 0.36, 0, Math.PI * 2);
+                        ctx.fill();
+
+                        ctx.fillStyle = m.state === 'chase' ? '#ef4444' : '#facc15';
+                        ctx.beginPath();
+                        ctx.arc(-6, -4, 4, 0, Math.PI * 2);
+                        ctx.arc(6, -4, 4, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
 
                     ctx.restore();
                 });
 
-                // Render Player (Custom Skin Canvas or Default Cyan Avatar with Flash on damage)
+                // Render Player
                 const px = this.player.x * this.tileSize;
                 const py = this.player.y * this.tileSize;
 
                 ctx.save();
                 ctx.translate(px, py);
 
-                // Invincible flashing frame effect
                 if (this.player.invincibleFrames > 0 && Math.floor(Date.now() / 80) % 2 === 0) {
                     ctx.globalAlpha = 0.4;
                 }
@@ -1323,8 +1431,8 @@
             // Main Menu Handlers
             document.getElementById('btn-generate-world').addEventListener('click', () => {
                 audio.playClick();
-                const world = FunhouseGenerator.generate(21, 21);
-                game.loadWorld(world);
+                const gameData = RoomGenerator.generateFullGame();
+                game.loadWorld(gameData);
                 document.getElementById('main-menu').classList.add('hidden');
             });
 
@@ -1405,7 +1513,7 @@
                 showToast("Customization saved!");
             });
 
-            // Custom Skin Image Upload with Background Removal
+            // Custom Skin Image Upload
             const skinFileInput = document.getElementById('input-skin-file');
             skinFileInput.addEventListener('change', (e) => {
                 const file = e.target.files[0];
@@ -1478,7 +1586,6 @@
 
                 try {
                     const parsed = JSON.parse(raw);
-                    if (!parsed.grid || !parsed.keys || !parsed.monsters) throw new Error();
                     audio.playClick();
                     game.loadWorld(parsed);
                     document.getElementById('modal-enter-json').classList.add('hidden');
@@ -1510,9 +1617,9 @@
             // Save World to IndexedDB
             document.getElementById('btn-save-world-db').addEventListener('click', async () => {
                 audio.playClick();
-                if (!game.world) return;
+                if (!game.gameState) return;
                 const exportData = JSON.parse(game.exportJSON());
-                const worldName = `World (Keys: ${game.keysCollected}/5)`;
+                const worldName = `Room ${game.gameState.currentRoomIndex + 1} Progress`;
                 await dbEngine.saveWorld(exportData, worldName);
                 showToast("World saved to IndexedDB! 💾");
             });
@@ -1552,8 +1659,8 @@
             document.getElementById('btn-end-play-again').addEventListener('click', () => {
                 audio.playClick();
                 document.getElementById('end-modal').classList.add('hidden');
-                const world = FunhouseGenerator.generate(21, 21);
-                game.loadWorld(world);
+                const gameData = RoomGenerator.generateFullGame();
+                game.loadWorld(gameData);
             });
 
             document.getElementById('btn-end-main-menu').addEventListener('click', () => {
